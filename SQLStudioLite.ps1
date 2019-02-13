@@ -39,6 +39,8 @@ $textBox2.Text+=","
 #newline at end of row
 $textBox2.Text+="`n`r`n`r"
 }
+#Always write results to a CSV as copy paste from results window puts newlines in a CSV which Excel hates
+$ds.tables[0] | Export-Csv ./results.csv -NoTypeInformation
 }
 #textbox for query
 $textBox1 = New-Object system.windows.Forms.TextBox
